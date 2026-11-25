@@ -1022,3 +1022,401 @@ y_1
         \task \(m=-1\)
     \end{tasks}
 \end{example}
+
+
+% ==========================================
+% EXAMPLES: DISTANCE FROM A POINT TO A LINE
+% ==========================================
+
+% ==========================================
+% EXAMPLE 5
+% ==========================================
+
+\vspace{0.6\baselineskip}
+
+\begin{example}
+    فاصلۀ مبدأ مختصات از خط
+    \(
+        2mx+(1-m^2)y=1+m^2
+    \)
+    کدام است؟ \((m\ne 1)\)
+
+    \begin{tasks}(2)
+        \task \(\dfrac{1}{m}\)
+        \task \(m\)
+        \task \(1\)
+        \task \(1+m^2\)
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% EXAMPLE 6
+% ==========================================
+
+\vspace{0.2\baselineskip}
+
+\begin{example}
+    مساحت مربعی که یک ضلع آن بر خط به معادلۀ
+    \(y=x-1\) واقع و مختصات یک رأس آن
+    \((2,3)\) باشد، کدام است؟
+
+    \begin{tasks}(2)
+        \task \(2\)
+        \task \(3\)
+        \task \(4\)
+        \task \(9\)
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% EXAMPLE 7
+% ==========================================
+
+\vspace{0.2\baselineskip}
+
+\begin{example}
+    دو نقطه بر خط به معادلۀ \(y=x-1\) قرار دارند
+    که فاصلۀ این نقاط از خط به معادلۀ
+    \(2x-3y=5\)، برابر \(\sqrt{13}\) است.
+    طول این دو نقطه کدام است؟
+
+    \begin{tasks}(2)
+        \task $9$ و $-15$
+        \task $11$ و $-15$
+        \task $-11$ و $+15$
+        \task $-9$ و $11$
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% EXAMPLE 8
+% ==========================================
+
+\vspace{0.2\baselineskip}
+
+\begin{example}
+    دو ضلع یک مستطیل منطبق بر دو خط به معادلات
+    \(2y+x=6\) و \(2x-y=7\) هستند و یکی از
+    رأس‌های آن نقطۀ \(A(8,5)\) است.
+    مساحت این مستطیل کدام است؟
+
+    \begin{tasks}(4)
+        \task \(7.2\)
+        \task \(9.6\)
+        \task \(11.4\)
+        \task \(12.8\)
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% DISTANCE BETWEEN PARALLEL LINES
+% ==========================================
+
+\begin{remark}[توجه]
+    \noindent
+    \begin{minipage}[c]{0.68\textwidth}
+        \raggedleft
+        فاصلۀ دو خط موازی
+        \(
+            ax+by+c=0
+        \)
+        و
+        \(
+            ax+by+c'=0
+        \)
+        برابر است با:
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.25\textwidth}
+        \centering
+        \[
+            \frac{|c-c'|}{\sqrt{a^2+b^2}}
+        \]
+    \end{minipage}
+\end{remark}
+
+\begin{center}
+\begin{tikzpicture}[
+    line cap=round,
+    line join=round
+]
+
+    % Two parallel lines
+    \draw[
+        MPPrimary,
+        line width=1pt,
+        -{Stealth}
+    ] (0,1.1) -- (2.1,1.1);
+
+    \draw[
+        MPPrimary,
+        line width=1pt,
+        -{Stealth}
+    ] (0,0) -- (2.1,0);
+
+    % Perpendicular distance
+    \draw[
+        MPPrimary,
+        dashed,
+        line width=0.9pt
+    ] (1.05,0) -- (1.05,1.1);
+
+    % Right-angle marker
+    \draw[
+        MPPrimary,
+        line width=0.8pt
+    ] (1.05,0.95) -- (1.2,0.95) -- (1.2,1.1);
+
+\end{tikzpicture}
+
+\vspace{0.3\baselineskip}
+{\small (اثبات صفحه ۲۷)}    
+\end{center}
+
+\begin{example}
+    دو ضلع مربع منطبق بر دو خط به معادلات
+    \(2x-2y=3\) و \(y=x+1\) هستند.
+    مساحت این مربع کدام است؟
+
+    \begin{tasks}(2)
+        \task \(\dfrac{9}{8}\)
+        \task \(\dfrac{9}{4}\)
+        \task \(\dfrac{25}{8}\)
+        \task \(\dfrac{25}{4}\)
+    \end{tasks}
+\end{example}
+
+
+% ==========================================
+% LOCUS OF POINTS EQUIDISTANT FROM
+% TWO PARALLEL LINES
+% ==========================================
+
+\begin{remark}
+    مکان هندسی نقاطی از صفحه که از دو خط موازی
+    \(ax+by+c=0\) و \(ax+by+c'=0\)
+    به یک فاصله باشند، خطی موازی آن‌هاست که از
+    وسط فاصلۀ بین دو خط می‌گذرد و معادلۀ آن
+    به صورت زیر است:
+\end{remark}
+
+\begin{center}
+    \begin{tikzpicture}[
+        line cap=round,
+        line join=round
+    ]
+
+        % Upper parallel line
+        \draw[
+            MPPrimary,
+            line width=1pt
+        ] (-2.6,1.15) -- (0.8,1.15);
+
+        \node[
+            above=2pt
+        ] at (-0.9,1.15)
+        {$ax+by+c=0$};
+
+        % Lower parallel line
+        \draw[
+            MPPrimary,
+            line width=1pt
+        ] (-2.6,0) -- (0.8,0);
+
+        \node[
+            below=2pt
+        ] at (-0.9,0)
+        {$ax+by+c'=0$};
+
+        % Middle parallel line (equidistant)
+        \draw[
+            MPSecondary,
+            densely dotted,
+            line width=1pt
+        ] (-2.6,0.575) -- (-0.1,0.575);
+
+        \node[
+            right=2pt
+        ] at (-0.1,0.575)
+        {$ax+by+\dfrac{c+c'}{2}=0$};
+
+    \end{tikzpicture}
+\end{center}
+
+% ==========================================
+% EXAMPLE
+% ==========================================
+
+\begin{example}
+    معادلۀ یکی از محورهای تقارن مستطیلی که دو ضلع آن
+    روی خطوط
+    \(3x-y+7=0\) و \(6x-2y-6=0\)
+    می‌باشد، کدام است؟
+
+    \begin{tasks}(2)
+        \task \(3x-y-2=0\)
+        \task \(3x-y-1=0\)
+        \task \(3x-y+1=0\)
+        \task \(3x-y+2=0\)
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% AREA OF A TRIANGLE
+% ==========================================
+
+\begin{remark}
+    مساحت مثلثی که مختصات سه رأس آن معلوم باشد،
+    به صورت زیر به دست می‌آید:
+\end{remark}
+
+\noindent
+\begin{minipage}[c]{0.59\textwidth}
+    \centering
+
+    \resizebox{\linewidth}{!}{$
+        S=\frac{1}{2}
+        \left|
+        x_{_A}(y_{_B}-y_{_C})
+        +x_{_B}(y_{_C}-y_{_A})
+        +x_{_C}(y_{_A}-y_{_B})
+        \right|
+    $}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.12\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        >=Stealth,
+        line cap=round
+    ]
+
+        \node (A) at (0,0.95) {$A$};
+        \node (B) at (-0.65,-0.15) {$B$};
+        \node (C) at (0.65,-0.15) {$C$};
+
+        \draw[
+            ->,
+            MPPrimary,
+            line width=0.85pt,
+            bend right=22
+        ] (A) to (B);
+
+        \draw[
+            ->,
+            MPPrimary,
+            line width=0.85pt,
+            bend right=22
+        ] (B) to (C);
+
+        \draw[
+            ->,
+            MPPrimary,
+            line width=0.85pt,
+            bend right=22
+        ] (C) to (A);
+
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        line cap=round,
+        line join=round
+    ]
+
+        % Triangle vertices
+        \coordinate (A) at (1.1,2.1);
+        \coordinate (B) at (0,0);
+        \coordinate (C) at (2.3,0.35);
+
+        % Triangle
+        \draw[
+            MPPrimary,
+            line width=1.1pt
+        ] (A) -- (B) -- (C) -- cycle;
+
+        % Vertex labels
+        \node[above=2pt] at (A) {$A$};
+        \node[below left=1pt] at (B) {$B$};
+        \node[below right=1pt] at (C) {$C$};
+
+    \end{tikzpicture}
+\end{minipage}
+
+% ==========================================
+% EXAMPLE: AREA OF A TRIANGLE FROM MIDPOINTS
+% ==========================================
+
+\vspace{0.5\baselineskip}
+
+\noindent
+\begin{minipage}[c]{0.64\textwidth}
+    \raggedleft
+
+    \begin{example}
+        اگر نقاط \(M(3,2)\)، \(N(6,2)\) و
+        \(P(4,-3)\) نقاط میانی اضلاع یک مثلث
+        (\(\overset{\triangle}{ABC}\)) باشند،
+        مساحت این مثلث
+        (\(\overset{\triangle}{ABC}\))
+        برابر است با:
+
+        \begin{tasks}(2)
+            \task \(6.5\)
+            \task \(7.5\)
+            \task \(26\)
+            \task \(30\)
+        \end{tasks}
+    \end{example}
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.30\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        line cap=round,
+        line join=round
+    ]
+
+        % Vertices of the original triangle
+        \coordinate (A) at (1.2,2.8);
+        \coordinate (B) at (0,0);
+        \coordinate (C) at (2.8,0);
+
+        % Midpoints of the three sides
+        \coordinate (M) at ($(A)!0.5!(B)$);
+        \coordinate (N) at ($(A)!0.5!(C)$);
+        \coordinate (P) at ($(B)!0.5!(C)$);
+
+        % Shaded medial triangle
+        \fill[
+            pattern=north east lines,
+            pattern color=MPSecondary
+        ] (M) -- (N) -- (P) -- cycle;
+
+        % Outer triangle
+        \draw[
+            MPPrimary,
+            line width=1.1pt
+        ] (A) -- (B) -- (C) -- cycle;
+
+        % Inner triangle
+        \draw[
+            MPPrimary,
+            line width=1.1pt
+        ] (M) -- (N) -- (P) -- cycle;
+
+        % Vertex labels
+        \node[above=2pt] at (A) {$A$};
+        \node[below left=1pt] at (B) {$B$};
+        \node[below right=1pt] at (C) {$C$};
+
+    \end{tikzpicture}
+
+\end{minipage}
+
