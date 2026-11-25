@@ -880,3 +880,145 @@ y_1
 
 \section{فاصلۀ نقطه از خط}
 
+
+% ==========================================
+% DISTANCE FROM A POINT TO A LINE
+% ==========================================
+
+\noindent
+\begin{minipage}[c]{0.63\textwidth}
+    \raggedleft
+
+    فاصلۀ نقطۀ \(\Point{A}{x_1}{y_1}\) از خط
+    \(d: ax+by+C=0\)، برابر با طول \(AH\)،
+    یعنی طول پاره‌خط عمودی است که از نقطۀ \(A\)
+    بر خط رسم می‌شود. که این طول برابر است با:
+
+    \[
+        AH=
+        \frac{|ax_1+by_1+C|}
+        {\sqrt{a^2+b^2}}
+    \]
+
+    \hfill {\small (اثبات صفحه ۲۷)}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.30\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.85cm,
+        y=0.85cm,
+        line cap=round,
+        line join=round
+    ]
+
+        % Line d
+        \draw[
+            MPPrimary,
+            line width=1pt
+        ] (-1.7,-0.425) -- (1.7,0.425);
+
+        % Point A and perpendicular AH
+        \coordinate (H) at (0,0);
+        \coordinate (A) at (-0.25,1);
+
+        \draw[
+            MPPrimary,
+            line width=1pt
+        ] (A) -- (H);
+
+        % Point A
+        \fill[MPPrimary] (A) circle (1.5pt);
+
+        % Right-angle marker
+        \draw[
+            MPPrimary,
+            line width=0.75pt
+        ]
+        ($(H)+(0.126,0.032)$)
+        --
+        ($(H)+(0.094,0.158)$)
+        --
+        ($(H)+(-0.032,0.126)$);
+
+        % Labels
+        \node[above left] at (A) {$A$};
+        \node[below] at (H) {$H$};
+        \node[below left] at (-1.55,-0.39) {$d$};
+
+    \end{tikzpicture}
+\end{minipage}
+
+\begin{remark}[توجه]
+    \begin{minipage}[c]{0.63\textwidth}
+        \raggedleft
+        فاصلۀ مبدأ مختصات از خط
+        \(ax+by+C=0\) برابر است با:
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{0.25\textwidth}
+        \centering
+        \[
+            \frac{|C|}{\sqrt{a^2+b^2}}
+        \]
+    \end{minipage}
+\end{remark}
+
+% ==========================================
+% EXAMPLE 1
+% ==========================================
+
+\vspace{0.6\baselineskip}
+
+\begin{example}
+    فاصلۀ نقطۀ \(A(7,5)\) را از خط
+    \(4x+3y-18=0\) به دست آورید.
+\end{example}
+
+% ==========================================
+% EXAMPLE 2
+% ==========================================
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+    اگر \(A(-1,2)\)، \(B(3,0)\) و \(C(1,-2)\)
+    سه رأس مثلث \(ABC\) باشند،
+    طول ارتفاع \(AH\) کدام است؟
+
+    \begin{tasks}(2)
+        \task \(2\sqrt{3}\)
+        \task \(3\sqrt{3}\)
+        \task \(2\sqrt{2}\)
+        \task \(3\sqrt{2}\)
+    \end{tasks}
+\end{example}
+
+% ==========================================
+% EXAMPLE 3
+% ==========================================
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+    مساحت دایره‌ای به مرکز \(W(2,-1)\)
+    که بر خط \(3x-4y=0\) مماس است را بیابید.
+\end{example}
+
+% ==========================================
+% EXAMPLE 4
+% ==========================================
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+    اگر فاصلۀ \(M(1,2)\) از خط
+    \(3x+my-1=0\) برابر \(2\) باشد، آن‌گاه:
+
+    \begin{tasks}(2)
+        \task \(m=-2\)
+        \task \(m=1\)
+        \task \(m=4\)
+        \task \(m=-1\)
+    \end{tasks}
+\end{example}
