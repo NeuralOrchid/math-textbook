@@ -1,0 +1,43 @@
+% ==========================================
+% CHAPTER DESIGN
+% ==========================================
+
+\renewcommand*{\chapterlinesformat}[3]{%
+    \parbox{\linewidth}{%
+
+        % Right-to-left chapter layout
+        \raggedleft
+
+        % ------------------------------------------
+        % Chapter identifier — unchanged
+        % ------------------------------------------
+
+        \if\relax\detokenize{#2}\relax
+        \else
+            {%
+                \persiansffamily
+                \bfseries
+                \large
+                \color{MPSecondary}
+                فصل~#2
+                \par
+            }%
+
+            \vspace{0.2\baselineskip}
+        \fi
+
+        % ------------------------------------------
+        % Centered chapter title
+        % ------------------------------------------
+
+        \noindent
+        \makebox[\linewidth][c]{%
+            {#3}%
+        }\par
+    }%
+    \hspace{-\parfillskip}%
+}
+
+\RedeclareSectionCommand[
+    afterskip=0.8\baselineskip
+]{chapter}

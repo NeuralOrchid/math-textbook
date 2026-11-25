@@ -1,0 +1,882 @@
+\chapter{هندسه تحلیلی}
+
+می‌دانیم از هر دو نقطۀ متمایز، تنها یک خط عبور می‌کند؛ بنابراین:
+\begin{enumerate}
+    \item با داشتن \underline{مختصات دو نقطه} از یک خط باید بتوان معادلۀ آن را بدست آورد.
+    \item با داشتن معادلۀ یک خط می‌توان با مشخص کردن \underline{دو نقطه} از خط، نمودار آن را در دستگاه محورهای مختصات رسم نمود.
+\end{enumerate}
+
+\begin{example}
+نمودار خطوط با معادلات زیر را در دستگاه محورهای مختصات مقابل رسم کنید.
+\end{example}
+
+\begin{LTR}
+\begin{minipage}[c]{0.35\textwidth}
+\vspace{0pt}
+\begin{enumerate}
+\setlength{\itemsep}{0.7cm}
+\item $L_1:y=2x-4$
+\item $L_2:y=2x+1$
+\item $L_3:y=1$
+\item $L_4:x=-2$
+\end{enumerate}
+\end{minipage}\hfill\begin{minipage}[c]{0.55\textwidth}
+    \vspace{0pt}
+    \centering
+
+    \begin{tikzpicture}[
+        x=0.7cm,
+        y=0.7cm,
+        line cap=round,
+        >=stealth
+    ]
+
+        % Grid
+        \draw[
+            step=1,
+            color=MPBorder,
+            line width=0.35pt
+        ] (-3,-2) grid (3,3);
+
+        % X axis
+        \draw[
+            ->,
+            color=MPPrimary,
+            line width=0.9pt
+        ] (-4.6,0) -- (5.6,0)
+        node[below right] {$x$};
+
+        % Y axis
+        \draw[
+            ->,
+            color=MPPrimary,
+            line width=0.9pt
+        ] (0,-2.4) -- (0,3.5)
+        node[above left] {$y$};
+
+        % X-axis labels
+        \foreach \x in {-3,-2,-1,1,2,3} {
+            \node[
+                below=2pt,
+                fill=MPBackground,
+                inner sep=1pt,
+                text=MPTextMuted
+            ] at (\x,0) {\small $\x$};
+        }
+
+        % Y-axis labels
+        \foreach \y in {-2,-1,1,2,3} {
+            \node[
+                left=2pt,
+                fill=MPBackground,
+                inner sep=1pt,
+                text=MPTextMuted
+            ] at (0,\y) {\small $\y$};
+        }
+
+    \end{tikzpicture}
+\end{minipage}
+\end{LTR}
+
+\vspace{1.8\baselineskip}
+
+% شیب خط
+\begin{minipage}[c]{0.46\textwidth}
+
+    \section{شیب (ضریب زاویه) خط:}
+
+\end{minipage}\hfill\begin{minipage}[c]{0.22\textwidth}
+\centering
+\[
+    \text{شیب}=\frac{a}{b}
+\]
+\end{minipage}\hfill\begin{minipage}[c]{0.24\textwidth}
+\centering
+\begin{tikzpicture}[
+    x=0.65cm,
+    y=0.65cm,
+    line cap=round
+]
+
+    % Triangle vertices
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (3,0);
+    \coordinate (C) at (3,1.8);
+
+    % Main line
+    \draw[
+        MPPrimary,
+        line width=1.3pt
+    ] (-0.3,-0.18) -- (3.3,1.98);
+
+    % Horizontal dashed line: b
+    \draw[
+        MPSecondary,
+        dashed,
+        line width=0.9pt
+    ] (A) -- (B);
+
+    % Vertical dashed line: a
+    \draw[
+        MPSecondary,
+        dashed,
+        line width=0.9pt
+    ] (B) -- (C);
+
+    % Right-angle marker
+    \draw[
+        MPText,
+        line width=0.7pt
+    ]
+    (2.72,0) -- (2.72,0.28) -- (3,0.28);
+
+    % Labels
+    \node[
+        below=3pt,
+        text=MPSecondary
+    ] at (1.5,0) {$b$};
+
+    \node[
+        right=3pt,
+        text=MPSecondary
+    ] at (3,0.9) {$a$};
+
+\end{tikzpicture}
+\end{minipage}
+
+\begin{enumerate}[label=\arabic*]
+\item شیب یک خط برابر با تانژانت زاویه‌ای است که خط با جهت مثبت محور
+$x$ها می‌سازد که آن را با $m$ نشان می‌دهیم.
+
+% Positive slope: m = tan(alpha)
+\begin{minipage}[c]{0.19\textwidth}
+    \centering
+    $\displaystyle m=\tan\alpha$
+
+    \vspace{0.4em}
+
+    $\displaystyle m>0$
+\end{minipage}\hfill\begin{minipage}[c]{0.26\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.65cm,
+        y=0.65cm,
+        >=stealth
+    ]
+        % Axes
+        \draw[->, MPPrimary, thick]
+            (-4,0) -- (2,0);
+
+        \draw[->, MPPrimary, thick]
+            (-1,-1.7) -- (-1,1.7);
+
+        % Positive-slope line
+        \draw[MPPrimary, line width=1.5pt]
+            (-0.9,-1.4) -- (1.1,1.6);
+
+        % Angle alpha
+        \draw[MPSecondary, thick]
+            (0.033,0) ++(0:0.35)
+            arc[start angle=0,end angle=56,radius=0.35];
+
+        \node[MPPrimary] at (0.65,0.42) {$\alpha$};
+    \end{tikzpicture}
+\end{minipage}\hfill\begin{minipage}[c]{0.26\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.65cm,
+        y=0.65cm,
+        >=stealth
+    ]
+        % Axes
+        \draw[->, MPPrimary, thick]
+            (-4,0) -- (2,0);
+
+        \draw[->, MPPrimary, thick]
+            (-1,-1.7) -- (-1,1.7);
+
+        % Negative-slope line
+        \draw[MPPrimary, line width=1.5pt]
+            (-0.9,1.4) -- (1.1,-1.6);
+
+        % Angle beta
+        \draw[MPSecondary, thick]
+            (0.033,0) ++(0:0.35)
+            arc[start angle=0,end angle=124,radius=0.35];
+
+        \node[MPPrimary] at (0.15,0.65) {$\beta$};
+    \end{tikzpicture}
+\end{minipage}\hfill\begin{minipage}[c]{0.19\textwidth}
+    \centering
+    $\displaystyle m=\tan\beta$
+
+    \vspace{0.4em}
+
+    $\displaystyle m<0$
+\end{minipage}
+
+\begin{minipage}[c]{0.7\textwidth}
+\item شیب خطی که از دو نقطۀ
+$A\left|\begin{matrix}x_1\\y_1\end{matrix}\right.$
+و
+$B\left|\begin{matrix}x_2\\y_2\end{matrix}\right.$
+می‌گذرد برابر است با:
+\end{minipage}\hfill\begin{minipage}[c]{0.15\textwidth}
+    \[
+        m=\frac{y_2-y_1}{x_2-x_1}
+    \]
+\end{minipage}
+
+\item اگر شیب یک خط \(m=0\) باشد، خط موازی محور \(x\)ها است و معادلۀ آن به‌صورت \(y=a\) است.
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.75cm,
+    y=0.75cm,
+    >=stealth
+]
+    % Coordinate axes
+    \draw[->, MPPrimary, line width=0.9pt]
+        (-2.5,0) -- (2.5,0);
+
+    \draw[->, MPPrimary, line width=0.9pt]
+        (0,-0.5) -- (0,1.5);
+
+    % Horizontal line
+    \draw[MPPrimary, line width=1.1pt]
+        (-1.8,0.85) -- (1.8,0.85);
+
+    % Equation label
+    \node[right] at (1.8,0.85) {$y=a$};
+
+\end{tikzpicture}
+\end{center}
+
+\item اگر شیب یک خط تعریف‌نشده باشد، خط موازی محور \(y\)ها است و معادلۀ آن به‌صورت \(x=k\) است.
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.75cm,
+    y=0.75cm,
+    >=stealth
+]
+    % Coordinate axes
+    \draw[->, MPPrimary, line width=0.9pt]
+        (-2.5,0) -- (2.5,0);
+
+    \draw[->, MPPrimary, line width=0.9pt]
+        (0,-1.5) -- (0,1.5);
+
+    % Vertical line
+    \draw[MPPrimary, line width=1.1pt]
+        (0.9,-1.5) -- (0.9,1.5);
+
+    % Equation label
+    \node[below right] at (0.9,-1.5) {$x=k$};
+
+\end{tikzpicture}
+\end{center}
+
+\item \begin{enumerate}[label=\harfi*]
+    \item اگر معادلۀ خط به‌صورت \(ax+by+c=0\) (\(x\) و \(y\) یک طرف مساوی) باشد، آنگاه:
+    \hfill
+    \begin{minipage}[c]{0.154\textwidth}
+    \centering
+    $$m=-\frac{x \text{ضریب}}{y \text{ضریب}}$$
+    \end{minipage}
+
+    \item اگر معادلۀ خط به‌صورت \(ax=by+c\) (\(x\) و \(y\) در دو طرف مساوی) باشد، آنگاه:
+    \hfill
+    \begin{minipage}[c]{0.14\textwidth}
+    \centering
+    $$m=\frac{x \text{ضریب}}{y \text{ضریب}}$$
+    \end{minipage}
+\end{enumerate}
+
+\vspace{0.4\baselineskip}
+
+\begin{minipage}[c]{0.6\textwidth}
+\item دو خط \(d_1\) و \(d_2\) وقتی با هم موازی‌اند که:
+\hfil $m_1=m_2$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        x=0.65cm,
+        y=0.65cm,
+        >=stealth
+    ]
+
+        % First parallel line
+        \draw[->, MPPrimary, line width=1.1pt] (-2,0.4) -- (1,1.3);
+        \draw[MPPrimary, line width=1.1pt] (1,1.3) -- (2.3,1.7);
+
+        % Second parallel line
+        \draw[->, MPPrimary, line width=1.1pt] (-2,-0.6) -- (1,0.3);
+        \draw[MPPrimary, line width=1.1pt] (1,0.3) -- (2.3,0.7);
+        
+        % Line labels
+        \node[left] at (-2,0.4) {$d_1$};
+        \node[left] at (-2,-0.6) {$d_2$};
+
+        % Slope labels
+        \node[above] at (0,1) {$m_1$};
+        \node[above] at (0,0) {$m_2$};
+
+    \end{tikzpicture}
+\end{minipage}
+
+% ==========
+
+\begin{minipage}[c]{0.4\textwidth}
+\item دو خط \(d_1\) و \(d_2\) وقتی بر هم عمودند که:
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \[
+        m_1m_2=-1
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.03\textwidth}
+    \centering
+    یا
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.32\textwidth}
+    \centering
+    \[
+        m_1=-\frac{1}{m_2}
+    \]
+
+    {\small
+        (شیب‌ها عکس و قرینۀ یکدیگرند)
+    }
+\end{minipage}
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.65cm,
+    y=0.65cm
+]
+
+    % First line
+    \draw[
+        MPPrimary,
+        line width=1.1pt
+    ] (-1.4,-1.4) -- (1.4,1.4);
+
+    % Second line
+    \draw[
+        MPPrimary,
+        line width=1.1pt
+    ] (-1.4,1.4) -- (1.4,-1.4);
+
+    % Right angle marker
+    \draw[
+        MPPrimary,
+        line width=0.8pt
+    ]
+    (0.17,0.17) --
+    (0.34,0) --
+    (0.17,-0.17);
+
+    % Line labels
+    \node[left] at (-1.4,-1.4) {$d_1$};
+    \node[left] at (-1.4,1.4) {$d_2$};
+
+    % Slope labels
+    \node[below] at (-0.45,-0.45) {$m_1$};
+    \node[above] at (-0.45,0.45) {$m_2$};
+
+\end{tikzpicture}
+\end{center}
+
+\item شرط آنکه سه نقطۀ \(A\)، \(B\) و \(C\) بر یک خط راست واقع باشند (بر یک استقامت یا در یک راستا باشند)، آن است که:
+
+\begin{minipage}[c]{0.19\textwidth}
+    \centering
+    \[
+        m_{AB}=m_{BC}
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.33\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        x=0.65cm,
+        y=0.65cm
+    ]
+
+        % Collinear dotted line
+        \draw[
+            MPPrimary,
+            line width=1pt,
+            dotted
+        ] (-2,0) -- (2.2,0.9);
+
+        % Points
+        \fill[MPPrimary] (-1.3,0.16) circle (1.5pt);
+        \fill[MPPrimary] (0,0.45) circle (1.5pt);
+        \fill[MPPrimary] (1.3,0.75) circle (1.5pt);
+
+        % Point labels
+        \node[above] at (-1.3,0.16) {$A$};
+        \node[above] at (0,0.45) {$B$};
+        \node[above] at (1.3,0.75) {$C$};
+
+    \end{tikzpicture}
+\end{minipage}
+\end{enumerate}
+
+\begin{example}
+زاویۀ بین خط
+$y=\sqrt{3}x-1$
+و جهت مثبت محور $x$ها کدام است؟
+
+\begin{tasks}(4)
+    \task $120^\circ$
+    \task $60^\circ$
+    \task $45^\circ$
+    \task $30^\circ$
+\end{tasks}
+\end{example}
+
+\begin{remark}[یادآوری]
+\hfill
+$\tan 30^\circ = \frac{\sqrt{3}}{3} \qquad \tan 45^\circ = 1 \qquad \tan 60^\circ = \sqrt{3}$
+\end{remark}
+
+
+\begin{example}
+به ازای چه مقداری از $m$ دو خط $y=2x+1$ و $y+mx+2=0$ بر هم عموداند؟
+
+\begin{tasks}(4)
+    \task $-2$
+    \task $-\frac12$
+    \task $\frac12$
+    \task $2$
+\end{tasks}
+\end{example}
+
+\begin{example}
+اگر سه نقطۀ متمایز $A(1,1)$، $B(-1,-1)$ و $C(m,m^2+2m)$ روی یک خط راست باشند آن‌گاه:
+
+\begin{tasks}(4)
+    \task $m=0$
+    \task $m=-1$
+    \task $m=1$
+    \task $m=0\text{ و }-1$
+\end{tasks}
+\end{example}
+
+\vspace{0.4\baselineskip}
+
+\begin{remark}
+مختصات نقطۀ $M$ وسط $AB$ برابر است با:
+\hfill\begin{minipage}[c]{0.2\textwidth}
+$$M\left|\begin{matrix}
+\frac{x_{\! \scriptscriptstyle A}+x_{\! \scriptscriptstyle B}}{2}
+\\
+\frac{y_{\! \scriptscriptstyle A}+y_{\! \scriptscriptstyle B}}{2}
+\end{matrix}\right.$$
+\end{minipage}
+\end{remark}
+
+\begin{remark}
+طول نقطۀ برخورد خط با محور $x$ها (طول‌ها) را \underline{طول از مبدأ} و عرض نقطۀ برخورد خط با محور $y$ها (عرض‌ها) را \underline{عرض از مبدأ} خط می‌گویند.
+\end{remark}
+
+\begin{minipage}[c]{0.55\textwidth}
+برای بدست آوردن طول از مبدأ خط کافی است در معادلۀ خط بجای $y$، صفر قرار دهیم و برای تعیین عرض از مبدأ در معادلۀ خط بجای $x$، صفر قرار می‌دهیم.
+
+\[
+\text{\rl{معادلۀ خط d}}:\frac{x}{p}+\frac{y}{q}=1
+\]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.35\textwidth}
+\centering
+\begin{tikzpicture}[
+        x=0.6cm,
+        y=0.4cm,
+        >=stealth
+    ]
+
+    % fill
+    \fill[fill=MPSecondary!20] (0,0)--(0,2)--(-2,0);
+
+    % Axes
+    \draw[->, MPPrimary, thick]
+        (-3.2,0) -- (3.2,0);
+
+    \draw[->, MPPrimary, thick]
+        (0,-1.8) -- (0,3.2);
+
+    % Positive-slope line
+    \draw[MPPrimary, line width=1.5pt]
+        (-3,-1) -- (1,3);
+
+    \node[above left] at (0,2) {$q$};
+    \node[below right] at (-2,0) {$p$};
+    \node[left] at (-3,-1) {$d$};
+\end{tikzpicture}
+    \[
+    S=\frac{|p\times q|}{2}
+    \]
+\end{minipage}
+
+\begin{remark}
+معادلۀ خطی که از نقطۀ
+$M\left|\begin{matrix}
+x_1
+\\
+y_1
+\end{matrix}\right.$
+گذشته و دارای شیب $m$ باشد بصورت زیر است:
+\[y-y_1=m(x-x_1)\]
+\end{remark}
+
+\begin{example}
+نقطۀ $m(5,-4)$ وسط پاره‌خط واصل بین دو نقطۀ $A$ و $B(7,-2)$ است. مختصات $A$ را بیابید.
+\end{example}
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+معادلۀ خطی که از نقطۀ $A(-1,-5)$ گذشته و طول از مبدأ آن 4 باشد، کدام است؟
+
+\begin{tasks}(2)
+    \task $x+y=4$
+    \task $x-y=4$
+    \task $y-x=4$
+    \task $x+y=-4$
+\end{tasks}
+\end{example}
+
+\begin{example}
+دو نقطه‌ی $A(14,3)$ و $B(10,-13)$ مفروض است، معادله‌ی عمود منصف پاره خط $AB$ را بنویسید.
+\end{example}
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+خطی محورهای مختصات را در نقاط $A$ و $B$ قطع می‌کند.
+اگر $M(-3,2)$ وسط $AB$ باشد. معادلۀ این خط کدام است؟
+
+\begin{tasks}(2)
+    \task $2x-3y=-12$
+    \task $2x-3y=12$
+    \task $3x+2y=12$
+    \task $3x-2y=-12$
+\end{tasks}
+\end{example}
+
+\begin{example}
+خطی که از نقاط \((-1,1)\) و \((2,2)\) می‌گذرد،
+با محورهای مختصات چه مساحتی می‌سازد؟
+
+\begin{tasks}(1)
+    \task \(\frac{2}{3}\)
+    \task \(\frac{16}{3}\)
+    \task \(\frac{4}{3}\)
+    \task \(\frac{8}{3}\)
+\end{tasks}
+\end{example}
+
+\begin{remark}
+\begin{minipage}[c]{0.34\textwidth}
+    \centering
+    \resizebox{0.92\linewidth}{!}{%
+        \begin{tikzpicture}[>=stealth]
+            % Coordinate axes
+            \draw[->,MPPrimary,thick]
+                (-1.5,0) -- (1.5,0);
+            \draw[->,MPPrimary,thick]
+                (0,-1.5) -- (0,1.5);
+
+            % Positive slope
+            \draw[
+                MPPrimary,
+                thick,
+                dotted
+            ] (-1.25,-1.25) -- (1.25,1.25);
+
+            % Labels
+            \node[rotate=45] at (0.85,0.95) {\tiny$y=x$};
+            \node[rotate=45] at (-0.9,-0.65)
+                {\tiny\rl{نیمساز ناحیه اول سوم}};
+        \end{tikzpicture}%
+    }
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.34\textwidth}
+    \centering
+    \resizebox{0.92\linewidth}{!}{%
+        \begin{tikzpicture}[>=stealth]
+            % Coordinate axes
+            \draw[->,MPPrimary,thick]
+                (-1.5,0) -- (1.5,0);
+            \draw[->,MPPrimary,thick]
+                (0,-1.5) -- (0,1.5);
+
+            % Negative slope
+            \draw[
+                MPPrimary,
+                thick,
+                dotted
+            ] (-1.25,1.25) -- (1.25,-1.25);
+
+            % Labels
+            \node[rotate=-45] at (0.8,-1.0) {\tiny$y=-x$};
+            \node[rotate=-45] at (-0.8,1.0)
+                {\tiny\rl{نیمساز ناحیه دوم چهارم}};
+        \end{tikzpicture}%
+    }
+\end{minipage}
+\end{remark}
+
+\begin{remark}[توجه]
+مختصات نقطۀ برخورد دو خط با حل معادله‌های آن دو در یک دستگاه
+معادلات به دست می‌آید.
+\end{remark}
+
+\begin{example}
+محل برخورد دو خط به معادله‌های
+\(y=x+2\) و \(my=x+n\)
+روی محور \(ox\) قرار دارد. \(n\) کدام است؟
+
+\begin{tasks}(2)
+    \task \(-2\)
+    \task \(-1\)
+    \task \(1\)
+    \task \(2\)
+\end{tasks}
+\end{example}
+
+\begin{example}
+معادلۀ خطی که از نقطۀ تلاقی دو خط
+\(y=x+2\) و \(y=2x+3\)
+گذشته و بر نیمساز ربع اول و سوم عمود است،
+کدام می‌باشد؟
+
+\begin{tasks}(2)
+    \task \(y=-x+1\)
+    \task \(y=-x\)
+    \task \(y=x+2\)
+    \task \(y=x-1\)
+\end{tasks}
+\end{example}
+
+\begin{example}
+نقطۀ \(A(7,6)\) رأس یک متوازی‌الاضلاع است که
+دو ضلع آن منطبق بر دو خط به معادلات
+\(2y-3x=11\) و \(3y+4x=8\)
+می‌باشند. مختصات وسط قطر آن کدام است؟
+
+\begin{tasks}(2)
+    \task \((1,5)\)
+    \task \((3,4)\)
+    \task \((3,5)\)
+    \task \((4,3)\)
+\end{tasks}
+\end{example}
+
+% ==========================================
+% EXAMPLE 13
+% ==========================================
+
+\begin{example}
+اگر خطوط به معادلات
+\(
+    x+y=2,\quad 2x-y=1,\quad x-my=-1
+\)
+از یک نقطه بگذرند، \(m\) کدام است؟
+
+\begin{flushright}
+\begin{minipage}{0.38\textwidth}
+    \begin{tasks}(2)
+        \task \(-2\)
+        \task \(-1\)
+        \task \(1\)
+        \task \(2\)
+    \end{tasks}
+\end{minipage}
+\end{flushright}
+\end{example}
+
+% ==========================================
+% PARALLELOGRAM PROPERTY
+% ==========================================
+
+\begin{remark}[توجه]
+در هر متوازی‌الاضلاع، قطرها منصف یکدیگرند و 
+در متوازی‌الاضلاع \(ABCD\) داریم:
+
+\begin{minipage}[c]{0.48\textwidth}
+    \[
+    \left\{
+    \begin{aligned}
+        x_{_A}+x_{_C} &= x_{_B}+x_{_D}\\
+        y_{_A}+y_{_C} &= y_{_B}+y_{_D}
+    \end{aligned}
+    \right.
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.42\textwidth}
+    \centering
+    \resizebox{0.95\linewidth}{!}{%
+        \begin{tikzpicture}[
+            line cap=round,
+            line join=round
+        ]
+            % Vertices
+            \coordinate (A) at (0,2);
+            \coordinate (B) at (3,2);
+            \coordinate (C) at (4.4,0.5);
+            \coordinate (D) at (1.4,0.5);
+
+            % Parallelogram
+            \draw[MPPrimary, line width=1.1pt]
+                (A)--(B)--(C)--(D)--cycle;
+
+            % Diagonals
+            \draw[MPSecondary, dotted, thick]
+                (A)--(C);
+            \draw[MPSecondary, dotted, thick]
+                (B)--(D);
+
+            % Intersection
+            \fill[MPPrimary] (intersection cs:
+                first line={(A)--(C)},
+                second line={(B)--(D)}
+            ) circle (2.2pt);
+
+            % Vertex labels
+            \node[above left] at (A) {$A$};
+            \node[above right] at (B) {$B$};
+            \node[below right] at (C) {$C$};
+            \node[below left] at (D) {$D$};
+        \end{tikzpicture}%
+    }
+\end{minipage}
+\end{remark}
+
+% ==========================================
+% EXAMPLE 14
+% ==========================================
+
+\vspace{0.6\baselineskip}
+
+\begin{example}
+نقاط \(A(2,3)\)، \(B(-1,0)\) و \(C(1,-2)\)
+سه رأس از یک مستطیل \(ABCD\) هستند.
+مختصات رأس چهارم آن را بیابید.
+\end{example}
+
+% ==========================================
+% DISTANCE BETWEEN TWO POINTS
+% ==========================================
+
+\begin{remark}[توجه]
+فاصلۀ عددی دو نقطۀ
+\(A(x_1,y_1)\) و \(B(x_2,y_2)\)،
+یعنی طول پاره‌خط \(AB\)، برابر است با:
+
+\begin{center}
+    \fbox{%
+        \(\displaystyle
+        AB=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+        \)
+    }
+\end{center}
+
+\begin{minipage}[c]{0.48\textwidth}
+    اگر \(A\) و \(B\) دو نقطۀ هم‌عرض باشند:
+    \[
+        AB=|x_{_A}-x_{_B}|
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.43\textwidth}
+    اگر \(A\) و \(B\) دو نقطۀ هم‌طول باشند:
+    \[
+        AB=|y_{_A}-y_{_B}|
+    \]
+\end{minipage}
+
+\vspace{0.4\baselineskip}
+
+\begin{minipage}[c]{0.48\textwidth}
+    \[
+    \begin{gathered}
+        \Point{A}{-1}{3},\, \Point{B}{5}{3}\,
+        \Longrightarrow AB= \quad
+    \end{gathered}
+    \]
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.43\textwidth}
+    \[
+    \begin{gathered}
+        \Point{A}{1}{2},\, \Point{B}{1}{-3}\,
+        \Longrightarrow AB= \quad
+    \end{gathered}
+    \]
+\end{minipage}
+\end{remark}
+
+% ==========================================
+% EXAMPLE 15
+% ==========================================
+
+\vspace{0.6\baselineskip}
+
+\begin{example}
+نقاط \(A(2,0)\)، \(B(5,4)\) و \(C(-2,3)\)
+را در نظر بگیرید.
+
+\begin{enumerate}
+    \setlength{\itemsep}{0.8\baselineskip}
+
+    \item محیط مثلث \(ABC\) را بیابید.
+
+    \item به دو روش نشان دهید
+    \(\overset{\triangle}{ABC}\)
+    یک مثلث قائم‌الزاویه است.
+
+    \item مساحت مثلث \(ABC\) چقدر است؟
+\end{enumerate}
+\end{example}
+
+% ==========================================
+% EXAMPLE 16
+% ==========================================
+
+\vspace{0.6\baselineskip}
+
+\begin{example}
+مثلث با رئوس
+\(A(1,9)\)، \(B(3,1)\) و \(C(7,11)\)
+را در نظر بگیرید. طول میانه \(AM\) و معادلۀ آن
+را به دست آورید.
+\end{example}
+
+% ==========================================
+% EXAMPLE 17
+% ==========================================
+
+\vspace{0.8\baselineskip}
+
+\begin{example}
+دایره‌ای به مرکز مبدأ مختصات، از نقطۀ
+\(N(-6,8)\) می‌گذرد. قطر دایره را محاسبه کنید.
+\end{example}
+
+\section{فاصلۀ نقطه از خط}
+

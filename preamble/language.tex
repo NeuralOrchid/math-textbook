@@ -1,0 +1,45 @@
+% ==========================================
+% LANGUAGE AND BIDIRECTIONAL TYPESSETTING
+% ==========================================
+
+\usepackage{xepersian}
+
+% ==========================================
+% PERSIAN HARFI NUMBERING
+% ==========================================
+
+\makeatletter
+
+% Preserve original XePersian formatters
+\let\MPOriginalAtHarfi\@harfi
+\let\MPOriginalHarfinumeral\harfinumeral
+\let\MPOriginalAtAlph\@alph
+
+% Correct the first letter globally
+\def\@harfi#1{%
+    \ifnum#1=1
+        الف%
+    \else
+        \MPOriginalAtHarfi{#1}%
+    \fi
+}
+
+% Apply the same correction to integer-based numbering
+\renewcommand*{\harfinumeral}[1]{%
+    \ifnum#1=1
+        الف%
+    \else
+        \MPOriginalHarfinumeral{#1}%
+    \fi
+}
+
+% Apply the same correction to \alph
+\def\@alph#1{%
+    \ifnum#1=1
+        الف%
+    \else
+        \MPOriginalAtAlph{#1}%
+    \fi
+}
+
+\makeatother

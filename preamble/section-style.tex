@@ -1,0 +1,91 @@
+
+% ==========================================
+% SECTION HEADING DESIGN
+% ==========================================
+
+% ------------------------------------------
+% SECTION TYPOGRAPHY
+% ------------------------------------------
+
+\setkomafont{section}{
+    \normalfont
+    \persiansffamily
+    \bfseries
+    \Large
+}
+
+% ------------------------------------------
+% SUBSECTION TYPOGRAPHY
+% ------------------------------------------
+
+\setkomafont{subsection}{
+    \normalfont
+    \persiansffamily
+    \bfseries
+    \large
+    \color{MPPrimary}
+}
+
+% ------------------------------------------
+% SUBSUBSECTION TYPOGRAPHY
+% ------------------------------------------
+
+\setkomafont{subsubsection}{
+    \normalfont
+    \persiansffamily
+    \bfseries
+    \normalsize
+    \color{MPSecondary}
+}
+
+
+% ==========================================
+% SECTION HEADING FORMAT
+% ==========================================
+
+\makeatletter
+
+\renewcommand*{\sectionlinesformat}[4]{%
+
+    \Ifstr{#1}{section}{%
+
+        \hspace*{#2}%
+        \makebox[\dimexpr\linewidth-#2\relax][r]{%
+            {#4}%
+        }%
+
+    }{%
+
+        % Preserve lower-level headings
+        \@hangfrom{\hskip #2#3}{#4}%
+
+    }%
+}
+
+\makeatother
+
+
+% ==========================================
+% SECTION SPACING
+% ==========================================
+
+\RedeclareSectionCommand[
+    afterindent=false,
+    runin=false,
+    beforeskip=2.0\baselineskip,
+    afterskip=0.8\baselineskip
+]{section}
+
+\RedeclareSectionCommand[
+    afterindent=false,
+    runin=false,
+    beforeskip=1.6\baselineskip,
+    afterskip=0.5\baselineskip
+]{subsection}
+
+\RedeclareSectionCommand[
+    afterindent=false,
+    runin=false,
+    beforeskip=1.2\baselineskip,
+    afterskip=0.35\baselineskip
+]{subsubsection}

@@ -1,0 +1,56 @@
+% ==========================================
+% ENUMERATE LABEL DESIGN
+% ==========================================
+
+% ==========================================
+% ENUMERATE LABEL DESIGN
+% ==========================================
+
+% First level: Persian alphabetical
+\renewcommand*{\labelenumi}{%
+    {%
+        \persiansffamily
+        \bfseries
+        \color{MPSecondary}%
+        \alph{enumi}%
+    }%
+}
+
+% only colour, preserve default format
+\setlist[enumerate]{font=\bfseries\color{MPSecondary}}
+
+% ==========================================
+% NOTE ENVIRONMENT
+% ==========================================
+
+\newenvironment{remark}[1][توجه]{%
+    \par\addvspace{0.4\baselineskip}%
+    \noindent
+    {%
+        \persiansffamily
+        \color{MPSecondary}%
+        #1:%
+    }%
+    \nobreak\hspace{0.45em}%
+    \ignorespaces
+}{%
+    \par\addvspace{0.2\baselineskip}%
+}
+
+% ==========================================
+% MULTIPLE-CHOICE DESIGN
+% ==========================================
+
+\settasks{
+    label={\arabic{task})},
+    label-format={
+        \persiansffamily
+        \bfseries
+        \color{MPSecondary}
+    },
+    label-width=1.8em,
+    label-offset=0.25em,
+    item-indent=2.05em,
+    column-sep=1em,
+    after-item-skip=0.35\baselineskip
+}

@@ -1,0 +1,24 @@
+% ==========================================
+% EXAMPLE ENVIRONMENT
+% ==========================================
+
+\newcounter{mpexample}[chapter]
+
+% Local numbering
+\renewcommand*{\thempexample}{\arabic{mpexample}}
+
+\newenvironment{example}{%
+
+    \par
+    \addvspace{0.8\baselineskip}%
+    \noindent
+
+    \refstepcounter{mpexample}%
+
+    % Inline example heading
+    \mbox{{%
+        \persiansffamily
+        \bfseries
+        \color{MPSecondary}%
+        مثال~\thempexample)%
+    }}\nobreak\hspace{0.5em}\ignorespaces}{\ignorespacesafterend}

@@ -1,0 +1,48 @@
+\documentclass[
+    11pt,
+    a4paper,
+    twoside=true,
+    open=right,
+    parskip=half,
+    DIV=12,
+    footheight=10mm
+]{scrbook}
+
+% ==========================================
+% PREAMBLE CONFIGURATION
+% ==========================================
+
+\input{preamble/packages}
+\input{preamble/language}
+\input{preamble/fonts}
+\input{preamble/colors}
+\input{preamble/layout}
+\input{preamble/chapter-style}
+\input{preamble/section-style}
+\input{preamble/list-style}
+\input{preamble/example-style}
+\input{preamble/macros}
+
+% ==========================================
+% DOCUMENT
+% ==========================================
+\begin{document}
+
+% Cover page
+% \input{frontmatter/cover}
+
+% Front matter
+\frontmatter
+
+\tableofcontents
+
+% Main matter
+\mainmatter
+
+% Enable page-number badges
+\MPPageNumbersEnabledtrue
+
+% Chapters:
+\input{chapters/01.tex}
+
+\end{document}
