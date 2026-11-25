@@ -1420,3 +1420,183 @@ y_1
 
 \end{minipage}
 
+
+% ==========================================
+% REFLECTION AND SYMMETRY OF POINTS
+% ==========================================
+
+% Reflection of a point about another point
+\begin{minipage}[c]{0.68\textwidth}
+    \begin{remark}[توجه]
+        قرینۀ نقطۀ
+        $\Point{A}{x_1}{y_1}$
+        نسبت به نقطۀ
+        $\Point{O}{\alpha}{\beta}$
+        برابر است با:
+        \[
+            \Point{A'}{2\alpha-x_1}{2\beta-y_1}
+        \]
+    \end{remark}
+
+    \begin{remark}[نتیجه]
+        قرینۀ نقطۀ
+        $\Point{A}{x_1}{y_1}$
+        نسبت به مبدأ مختصات برابر است با:
+        \(
+            \Point{A'}{-x_1}{-y_1}
+        \)
+    \end{remark}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.28\textwidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.8cm,
+        y=0.8cm,
+        line cap=round
+    ]
+        % Points
+        \coordinate (Ap) at (-1.7,-1.7);
+        \coordinate (O) at (0,0);
+        \coordinate (A) at (1.7,1.7);
+
+        % Line segments
+        \draw[MPPrimary, thick] (O)--(A);
+        \draw[MPPrimary, thick, dotted] (Ap)--(O);
+
+        % Points
+        \fill[MPPrimary] (Ap) circle (2pt);
+        \fill[MPPrimary] (O) circle (2pt);
+        \fill[MPPrimary] (A) circle (2pt);
+
+        % Labels
+        \node[above right] at (A) {$A$};
+        \node[below left] at (Ap) {$A'$};
+        \node[below right] at (O) {$\Point{O}{\alpha}{\beta}$};
+    \end{tikzpicture}
+\end{minipage}
+
+\begin{example}
+    قرینۀ نقطۀ \(A(1,2)\) نسبت به نقطۀ \(M(-1,4)\) را بیابید.
+\end{example}
+
+% ==========================================
+% REFLECTION ABOUT THE COORDINATE AXES
+% ==========================================
+
+\begin{remark}[توجه]
+    اگر نقطۀ
+    $\Point{A}{x_0}{y_0}$
+    را در نظر بگیریم، آن‌گاه:
+
+    \noindent
+    \begin{minipage}[t]{0.65\textwidth}
+        \vspace{0pt}
+        \begin{enumerate}[label=\arabic*, leftmargin=*]
+            \setlength{\itemsep}{0.25\baselineskip}
+
+            \item تصویر \(A\) روی محور \(x\)ها برابر است با:
+            $\Point{A'}{x_0}{0}$
+
+            \item تصویر \(A\) روی محور \(y\)ها برابر است با:
+            $\Point{A'}{0}{y_0}$
+
+            \item قرینۀ \(A\) نسبت به محور \(x\)ها برابر است با:
+            $\Point{A'}{x_0}{-y_0}$
+
+            \item قرینۀ \(A\) نسبت به محور \(y\)ها برابر است با:
+            $\Point{A'}{-x_0}{y_0}$
+        \end{enumerate}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.31\textwidth}
+        \vspace{0pt}
+        \centering
+        \begin{tikzpicture}[
+            x=0.75cm,
+            y=0.75cm,
+            >=stealth,
+            line cap=round
+        ]
+            % Coordinate axes
+            \draw[->, MPPrimary, thick]
+                (-2.8,0)--(3.3,0)
+                node[below right] {$x$};
+
+            \draw[->, MPPrimary, thick]
+                (0,-1.6)--(0,2.1)
+                node[above left] {$y$};
+
+            % Points
+            \coordinate (A) at (2.3,1);
+            \coordinate (Ap) at (-2,1);
+            \coordinate (Ax) at (2.3,-1);
+
+            % Dotted projections
+            \draw[MPSecondary, dotted, thick] (Ap)--(A);
+            \draw[MPSecondary, dotted, thick] (A)--(Ax);
+
+            % Points
+            \fill[MPPrimary] (A) circle (2pt);
+            \fill[MPPrimary] (Ap) circle (2pt);
+            \fill[MPPrimary] (Ax) circle (2pt);
+
+            % Labels
+            \node[above right] at (A) {$A$};
+            \node[above] at (Ap) {$A'$};
+        \end{tikzpicture}
+    \end{minipage}
+
+    \begin{enumerate}[label=\arabic*, leftmargin=*]
+        \setcounter{enumi}{4}
+        \setlength{\itemsep}{0.25\baselineskip}
+
+        \item قرینۀ \(A\) نسبت به نیمساز ناحیۀ اول و سوم برابر است با:
+        $\Point{A'}{y_0}{x_0}$
+
+        \item قرینۀ \(A\) نسبت به نیمساز ناحیۀ دوم و چهارم
+        \((y=-x)\) برابر است با:
+        $\Point{A'}{-y_0}{-x_0}$
+    \end{enumerate}
+\end{remark}
+
+
+% ==========================================
+% EXAMPLE
+% ==========================================
+
+\begin{example}
+    اگر \(A'\) قرینۀ \(A(-7,1)\) نسبت به محور \(x\)ها و
+    \(A''\) قرینۀ \(A\) نسبت به نیمساز ناحیۀ اول و سوم باشند،
+    اندازۀ \(A'A''\) چقدر است؟
+
+    \begin{tasks}(4)
+        \task \(12\)
+        \task \(10\)
+        \task \(6\sqrt{2}\)
+        \task \(8\sqrt{2}\)
+    \end{tasks}
+\end{example}
+
+\begin{example}
+    اگر دو نقطۀ \(A(1-a,2b-1)\) و \(A'(a,b-3)\)
+    قرینۀ یکدیگر نسبت به خط \(x+y=0\) باشند،
+    \((a,b)\) کدام است؟
+
+    \begin{tasks}(2)
+        \task \((2,-1)\)
+        \task \((-2,1)\)
+        \task \((-1,1)\)
+        \task \((1,-1)\)
+    \end{tasks}
+\end{example}
+
+\begin{example}
+    قرینۀ نقطۀ \(A(3,2)\) نسبت به خط \(y=x-3\) کدام است؟
+
+    \begin{tasks}(2)
+        \task \((4,3)\)
+        \task \((5,0)\)
+        \task \(\left(\frac{11}{2},\frac{7}{2}\right)\)
+        \task \(\left(\frac{13}{3},\frac{9}{4}\right)\)
+    \end{tasks}
+\end{example}
