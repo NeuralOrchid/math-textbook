@@ -54,3 +54,65 @@
     column-sep=1em,
     after-item-skip=0.35\baselineskip
 }
+
+% ==========================================
+% ACTIVITY NUMBER BADGE
+% ==========================================
+
+\DeclareRobustCommand{\MPActivityBadge}[1]{%
+    \tikz[baseline=(activitynumber.base)]{%
+
+        % Number
+        \node[
+            name=activitynumber,
+            minimum width=1.9em,
+            minimum height=1.9em,
+            inner sep=0pt,
+            text=MPActivityAccent,
+            font=\persiansffamily\bfseries\small
+        ] {#1};
+
+        % Open-bottom rounded frame
+        \draw[
+            MPSecondary,
+            line width=0.8pt,
+            line cap=round,
+            line join=round,
+            rounded corners=4pt
+        ]
+        ([xshift=2pt,yshift=8pt]activitynumber.south east)
+        --
+        (activitynumber.north east)
+        --
+        ([yshift=-4pt]activitynumber.north west)
+        --
+        ([xshift=-2pt,yshift=8pt]activitynumber.south west);
+
+        % Endpoint dot
+        \fill[MPSecondary]
+        ([xshift=-2pt,yshift=8pt]activitynumber.south west)
+        circle (1.3pt);
+    }%
+}
+
+% ==========================================
+% MORE ACTIVITIES ENVIRONMENT
+% ==========================================
+
+\newenvironment{moreactivities}{%
+
+    % Subsection heading (keep existing style)
+    \subsection{فعالیت بیشتر:}
+
+    % Activity numbering
+    \renewcommand*{\labelenumi}{%
+        \protect\MPActivityBadge{\arabic{enumi}}%
+    }%
+
+    \begin{enumerate}
+        \setlength{\itemsep}{0.45\baselineskip}
+        \setlength{\topsep}{0.25\baselineskip}
+
+}{%
+    \end{enumerate}
+}
