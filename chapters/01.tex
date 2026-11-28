@@ -3222,3 +3222,289 @@ $(x-1)(x^2+ax-a+1)=0$
     \task \(-1<a<0\)
 \end{tasks}
 \end{example}
+
+
+\begin{remark}\hfil$(\text{ریشه‌ها }x_1\text{ و }x_2)$\hfill$\displaystyle ax^2+bx+c=a(x-x_1)(x-x_2)$\end{remark}
+
+% مثال ۱۴
+\par\smallskip
+\noindent
+\begin{minipage}[c]{0.61\linewidth}
+    \raggedleft
+    \begin{example}
+    نمودار تابع \(f(x)=ax^2+bx+c\) به‌صورت مقابل است.
+    مقدار ماکسیمم تابع کدام است؟
+    \begin{tasks}(2)
+        \task \(\dfrac{2}{3}\)
+        \task \(\dfrac{4}{3}\)
+        \task \(\dfrac{8}{3}\)
+        \task \(\dfrac{16}{3}\)
+    \end{tasks}
+    \end{example}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.34\linewidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.4cm,
+        y=0.4cm,
+        >=Stealth,
+        line cap=round,
+        line join=round
+    ]
+        \draw[->] (-1.8,0)--(3.8,0) node[below right] {$x$};
+        \draw[->] (0,-0.7)--(0,3.15) node[above left] {$y$};
+
+        \draw[thick,domain=-1.55:3.55,samples=100,smooth]
+            plot (\x,{-2/3*(\x+1)*(\x-3)});
+
+        \foreach \t in {-1,1,2,3}{
+            \draw (\t,0.07)--(\t,-0.07);
+        }
+
+        \node[below left] at (-1,0) {$-1$};
+        \node[below] at (3,0) {$3$};
+        \node[left] at (0,2) {$2$};
+    \end{tikzpicture}
+\end{minipage}
+\par\smallskip
+
+% توجه: علامت شیب مماس و علامت ضریب b
+\begin{remark}
+در سهمی \(y=ax^2+bx+c\):
+\end{remark}
+
+\begin{center}
+\begin{tikzpicture}[
+    x=0.4cm,
+    y=0.5cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+    % b<0: tangent at the y-intercept has negative slope
+    \begin{scope}
+        \draw[->] (-1.25,0)--(4.35,0);
+        \draw[->] (1.5,-0.15)--(1.5,2.35);
+
+        \draw[thick,domain=-0.34:4.74,samples=70]
+            plot (\x,{0.38*(\x-2.2)^2+0.55});
+
+        \draw[thick]
+            (0.2,{0.7362-0.532*(0.2-1.5)})--
+            (2.8,{0.7362-0.532*(2.8-1.5)});
+
+        \node[align=center] at (1.5,-1.8)
+            {\(\text{شیب}<0\)\\\(b<0\)};
+    \end{scope}
+
+    % b>0: tangent at the y-intercept has positive slope
+    \begin{scope}[xshift=4.0cm]
+        \draw[->] (-1.25,0)--(4.35,0);
+        \draw[->] (1.5,-0.15)--(1.5,2.35);
+
+        \draw[thick,domain=-1.74:3.34,samples=70]
+            plot (\x,{0.38*(\x-0.8)^2+0.55});
+
+        \draw[thick]
+            (0.2,{0.7362+0.532*(0.2-1.5)})--
+            (2.8,{0.7362+0.532*(2.8-1.5)});
+
+        \node[align=center] at (1.5,-1.8)
+            {\(\text{شیب}>0\)\\\(b>0\)};
+    \end{scope}
+
+    % b=0: the tangent at the vertex is horizontal
+    \begin{scope}[xshift=8.0cm]
+        \draw[->] (-1.25,0)--(4.35,0);
+        \draw[->] (1.5,-0.15)--(1.5,2.35);
+
+        \draw[thick,domain=-1.04:4.04,samples=70]
+            plot (\x,{0.38*(\x-1.5)^2+0.55});
+
+        \draw[thick] (0.2,0.55)--(2.8,0.55);
+
+        \node[align=center] at (1.5,-1.8)
+            {\(\text{شیب}=0\)\\\(b=0\)};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+% توجه: حالت‌های سهمی در صورت مثبت بودن دلتا
+\begin{remark}
+در سهمی \(y=ax^2+bx+c\)، اگر \(\Delta>0\) باشد:
+\end{remark}
+
+\begin{center}
+\noindent
+
+% Rightmost panel: only quadrant I is missed
+\begin{minipage}[t]{0.235\linewidth}
+    \centering
+    \begin{tikzpicture}[
+    x=0.62cm,
+    y=0.62cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+    % Axes
+    \draw[->] (-2.6,0)--(2.6,0);
+    \draw[->] (0,-1.55)--(0,1.55);
+
+    % Solid parabola: c < 0
+    \draw[thick,domain=-3.375:-0.375,samples=30]
+        plot (\x,{-0.65*(\x+2.3)*(\x+1.45)});
+
+    % Dotted parabola: c = 0
+    \draw[thick,densely dotted,domain=-2.375:0.625,samples=30]
+        plot (\x,{-0.65*\x*(\x+1.75)});
+\end{tikzpicture}
+
+    {\footnotesize
+    فقط از ناحیهٔ اول
+    نگذرد\\
+    \(a<0\)\\
+    \(b<0\)\\
+    \(c\leq0\)}
+\end{minipage}\hfill
+\vrule width 0.4pt height 2.95cm
+\hfill
+% Only quadrant II is missed
+\begin{minipage}[t]{0.235\linewidth}
+    \centering
+    \begin{tikzpicture}[
+    x=0.62cm,
+    y=0.62cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+    % Axes
+    \draw[->] (-2.6,0)--(2.6,0);
+    \draw[->] (0,-1.55)--(0,1.55);
+
+    % Solid parabola: c < 0
+    \draw[thick,domain=0.375:3.375,samples=30]
+        plot (\x,{-0.65*(\x-1.45)*(\x-2.3)});
+
+    % Dotted parabola: c = 0
+    \draw[thick,densely dotted,domain=-0.625:2.375,samples=30]
+        plot (\x,{-0.65*\x*(\x-1.75)});
+\end{tikzpicture}
+
+    {\footnotesize
+    فقط از ناحیهٔ دوم
+    نگذرد\\
+    \(a<0\)\\
+    \(b>0\)\\
+    \(c\leq0\)}
+\end{minipage}\hfill
+\vrule width 0.4pt height 2.95cm
+\hfill
+% Only quadrant III is missed
+\begin{minipage}[t]{0.235\linewidth}
+    \centering
+    \begin{tikzpicture}[
+    x=0.62cm,
+    y=0.62cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+    % Axes
+    \draw[->] (-2.6,0)--(2.6,0);
+    \draw[->] (0,-1.55)--(0,1.55);
+
+    % Solid parabola: c > 0
+    \draw[thick,domain=0.357:3.375,samples=30]
+        plot (\x,{0.65*(\x-1.45)*(\x-2.3)});
+
+    % Dotted parabola: c = 0
+    \draw[thick,densely dotted,domain=-0.625:2.375,samples=30]
+        plot (\x,{0.65*\x*(\x-1.75)});
+\end{tikzpicture}
+
+    {\footnotesize
+    فقط از ناحیهٔ سوم
+    نگذرد\\
+    \(a>0\)\\
+    \(b<0\)\\
+    \(c\geq 0\)}
+\end{minipage}\hfill
+\vrule width 0.4pt height 2.95cm
+\hfill
+% Leftmost panel: only quadrant IV is missed
+\begin{minipage}[t]{0.235\linewidth}
+    \centering
+    \begin{tikzpicture}[
+    x=0.62cm,
+    y=0.62cm,
+    >=Stealth,
+    line cap=round,
+    line join=round
+]
+    % Axes
+    \draw[->] (-2.6,0)--(2.6,0);
+    \draw[->] (0,-1.55)--(0,1.55);
+
+    % Solid parabola: c > 0
+    \draw[thick,domain=-3.375:-0.375,samples=30]
+        plot (\x,{0.65*(\x+2.3)*(\x+1.45)});
+
+    % Dotted parabola: c = 0
+    \draw[thick,densely dotted,domain=-2.375:0.625,samples=30]
+        plot (\x,{0.65*\x*(\x+1.75)});
+\end{tikzpicture}
+
+    {\footnotesize
+    فقط از ناحیهٔ چهارم
+    نگذرد\\
+    \(a>0\)\\
+    \(b>0\)\\
+    \(c\geq 0\)}
+\end{minipage}
+
+\end{center}
+
+% مثال ۱۷
+\begin{example}
+شکل مقابل مربوط به سهمی به معادلهٔ \(y=ax^2+bx+c\) است.
+کدام گزینه صحیح است؟
+
+\begin{minipage}[c]{0.61\linewidth}
+    \begin{tasks}(1)
+        \task یکی از صفرهای تابع، منفی است.
+        \task $a<0$ و $b>0$ و $c<0$
+        \task $a>0$ و $b<0$ و $c>0$
+        \task $a<0$ و $bc>0$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.34\linewidth}
+    \centering
+    \begin{tikzpicture}[
+        x=0.75cm,
+        y=0.75cm,
+        >=Stealth,
+        line cap=round,
+        line join=round
+    ]
+        \draw[->] (-2.0,0)--(2.0,0);
+        \draw[->] (0,-2.25)--(0,1.0);
+
+        \draw[thick,domain=-2.55:1.15,samples=75]
+            plot (\x,{-0.42*(\x+0.7)^2-0.75});
+    \end{tikzpicture}
+\end{minipage}
+\end{example}
+
+% مثال ۱۸
+\begin{example}
+سهمی به معادلهٔ \(f(x)=-mx^2+2x+m-1\) فقط از ناحیهٔ اول و مبدأ نمی‌گذرد.
+حدود \(m\) کدام است؟
+\begin{tasks}(2)
+    \task \(m>0\)
+    \task \(m<0\)
+    \task \(0<m<1\)
+    \task هیچ مقداری برای \(m\) یافت نمی‌شود.
+\end{tasks}
+\end{example}
