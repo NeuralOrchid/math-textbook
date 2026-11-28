@@ -2478,3 +2478,293 @@ $2ax^2+ax-6=0$
     \task $-6$
 \end{tasks}
 \end{example}
+
+% ==========================================
+% ماکزیمم و مینیمم سهمی
+% ==========================================
+
+\section{ماکزیمم یا مینیمم سهمی}
+
+\begin{minipage}[t]{0.55\textwidth}
+\vspace{0pt}
+
+\subsection{مدل اول:}
+\hfill $y=ax^2+bx+c,\qquad a\ne 0$
+
+\begin{minipage}[c]{0.45\linewidth}
+$$\text{\footnotesize طول رأس}=-\frac{b}{2a}$$
+\end{minipage}\hfill\begin{minipage}[c]{0.45\linewidth}
+$$\text{\footnotesize عرض رأس}=-\frac{\Delta}{4a}$$
+\end{minipage}
+
+\begin{enumerate}
+\begin{minipage}[c]{0.7\linewidth}
+    \item  اگر $a>0$ $\Longleftarrow$ سهمی رو به بالا:
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\linewidth}
+\centering
+\begin{tikzpicture}[x=1.3cm,y=1.2cm]
+    \draw[thick] (0,0.8)
+        .. controls (0.3,0) and (0.7,0) .. (1,0.8);
+    \node at (0.5,0) {\small $\min$};
+\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[c]{0.7\linewidth}
+    \item اگر $a<0$ $\Longleftarrow$ سهمی رو به پایین:
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\linewidth}
+\centering
+\begin{tikzpicture}[x=1.3cm,y=1.2cm]
+    \node at (0.5,0.75) {\small $\max$};
+    \draw[thick] (0,0)
+        .. controls (0.3,0.8) and (0.7,0.8) .. (1,0);
+\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[c]{0.7\linewidth}
+    \item محور تقارن سهمی:
+    \hfill
+    $x=-\frac{b}{2a}$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\linewidth}
+\centering
+\begin{tikzpicture}[x=1.4cm,y=1.1cm]
+    \draw[thick] (0,0)
+        .. controls (0.35,0.9) and (0.65,0.9) .. (1,0);
+    \draw[densely dashed] (0.5,-0.1)--(0.5,1.05);
+\end{tikzpicture}
+\end{minipage}
+\end{enumerate}
+\end{minipage}
+\hfill
+\vrule width 0.5pt height 1.5ex depth 6.5cm
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+\vspace{0pt}
+
+\subsection{مدل دوم:}
+\[
+    y=a(x-\alpha)^2+\beta
+\]
+
+\begin{center}
+\begin{minipage}{0.45\linewidth}
+\centering
+$a>0$
+
+\begin{tikzpicture}[x=1.3cm,y=1.2cm]
+    \draw[thick] (0,0.8)
+        .. controls (0.3,0) and (0.7,0) .. (1,0.8);
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\linewidth}
+\centering
+$a<0$
+
+\begin{tikzpicture}[x=1.3cm,y=1.2cm]
+    \draw[thick] (0,0)
+        .. controls (0.3,0.8) and (0.7,0.8) .. (1,0);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+$$\Point{\text{رأس}}{\alpha}{\beta}$$
+
+\begin{minipage}[c]{0.7\linewidth}
+معادلهٔ محور تقارن:
+\hfill
+$x=\alpha$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.2\linewidth}
+\centering
+\begin{tikzpicture}[x=1.2cm,y=1cm]
+    \draw[thick] (0,0)
+        .. controls (0.35,0.9) and (0.65,0.9) .. (1,0);
+    \draw[densely dashed] (0.5,-0.1)--(0.5,1.05);
+\end{tikzpicture}
+\end{minipage}
+\end{minipage}
+
+% ==========================================
+% EXAMPLE 1
+% ==========================================
+
+\begin{example}
+تعیین کنید کدام‌یک از سهمی‌های زیر ماکزیمم دارند و کدام‌یک مینیمم؛ سپس ماکزیمم یا مینیمم هر یک را مشخص کنید.
+
+\begin{LTR}
+\begin{enumerate}
+\setlength{\itemsep}{0.30\baselineskip}
+\item $g(x)=-(x+1)^2+3$
+\item $h(x)=x^2-4x+9$
+\end{enumerate}
+\end{LTR}
+\vspace{0.25\baselineskip}
+\end{example}
+
+% ==========================================
+% EXAMPLE 2
+% ==========================================
+
+\begin{minipage}[c]{0.60\textwidth}
+\begin{example}
+یک ماهیگیر می‌خواهد در کنار رودخانه محوطه‌ای مستطیل‌شکل را فنس‌کشی کند. او تنها هزینۀ
+۱۰۰
+متر فنس‌کشی را در اختیار دارد. ابعاد مستطیل را طوری تعیین کنید که مساحت آن بیشترین مقدار ممکن گردد.
+\end{example}
+\end{minipage} \hfill
+\begin{minipage}[c]{0.36\textwidth}
+\centering
+\begin{tikzpicture}[
+    x=0.72cm,
+    y=0.72cm,
+    line cap=round,
+    line join=round,
+    fence/.style={
+        draw=black,
+        line width=1.4pt
+    },
+    bank/.style={
+        draw=blue!55!black,
+        line width=0.8pt
+    },
+    ripple/.style={
+        draw=blue!40,
+        line width=0.55pt
+    }
+]
+
+    % ------------------------------------------
+    % River
+    % ------------------------------------------
+
+    \path[fill=blue!8]
+        (-0.7,0)
+        -- (6.7,0)
+        -- (6.7,-0.72)
+        .. controls (5.2,-0.95) and (4.2,-0.65)
+        .. (3.1,-0.78)
+        .. controls (1.7,-1.0) and (0.4,-0.7)
+        .. (-0.7,-0.86)
+        -- cycle;
+
+    % Water ripples
+    \begin{scope}
+        \clip
+            (-0.7,0)
+            -- (6.7,0)
+            -- (6.7,-0.72)
+            .. controls (5.2,-0.95) and (4.2,-0.65)
+            .. (3.1,-0.78)
+            .. controls (1.7,-1.0) and (0.4,-0.7)
+            .. (-0.7,-0.86)
+            -- cycle;
+
+        \foreach \x/\y in {
+            -0.3/-0.22,
+             1.1/-0.42,
+             2.5/-0.23,
+             3.9/-0.43,
+             5.25/-0.22,
+             0.35/-0.68,
+             2.0/-0.72,
+             4.5/-0.69
+        }{
+            \draw[ripple]
+                (\x,\y)
+                .. controls +(.18,.10) and +(-.18,.10)
+                .. ++(.7,0);
+        }
+    \end{scope}
+
+    % Riverbank: the unfenced side
+    \draw[bank]
+        (-0.7,0) -- (6.7,0);
+
+    % ------------------------------------------
+    % Three fenced sides of the rectangle
+    % ------------------------------------------
+
+    \draw[fence]
+        (0,0)
+        -- (0,3)
+        -- (6,3)
+        -- (6,0);
+
+    % ------------------------------------------
+    % Side lengths
+    % ------------------------------------------
+
+    \node[fill=white, inner sep=1.5pt]
+        at (-0.23,1.5) {$x$};
+
+    \node[fill=white, inner sep=1.5pt]
+        at (6.23,1.5) {$x$};
+
+    \node[fill=white, inner sep=1.5pt]
+        at (3,3.22) {$y$};
+
+\end{tikzpicture}
+\end{minipage}
+
+% ==========================================
+% EXAMPLE 3
+% ==========================================
+
+\begin{minipage}[c]{0.65\textwidth}
+\begin{example}
+پنجره‌ای به شکل مستطیل با یک مثلث متساوی‌الاضلاع در بالای آن می‌باشد. اگر محیط پنجره \(4\,\mathrm{m}\) باشد، \(x\) و \(y\) را طوری بیابید که پنجره حداکثر نوردهی را داشته باشد.
+\end{example}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.31\textwidth}
+    \centering
+
+    \begin{tikzpicture}[
+        x=0.68cm,
+        y=0.68cm,
+        line cap=round,
+        line join=round
+    ]
+
+        % Brick-wall grid behind the window
+        \draw[
+            step=0.42cm,
+            MPBorder,
+            line width=0.25pt
+        ]
+            (-0.35,-0.25) grid (3.05,4.95);
+
+        % Window: rectangle with an equilateral-triangle top
+        \fill[white]
+            (0.25,0.0)
+            -- (2.55,0.0)
+            -- (2.55,2.45)
+            -- (1.40,4.443)
+            -- (0.25,2.45)
+            -- cycle;
+
+        \draw[
+            MPPrimary,
+            line width=1.1pt
+        ]
+            (0.25,0.0)
+            -- (2.55,0.0)
+            -- (2.55,2.45)
+            -- (1.40,4.443)
+            -- (0.25,2.45)
+            -- cycle;
+
+        \node at (0.65,3.55) {$x$};
+        \node at (2.15,3.55) {$x$};
+        \node at (0.55,1.35) {$y$};
+        \node at (1.40,-0.18) {$x$};
+
+    \end{tikzpicture}
+\end{minipage}
