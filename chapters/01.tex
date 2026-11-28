@@ -3067,3 +3067,158 @@ $m^2x^2-4x-1=0$
 \end{tasks}
 
 \end{example}
+
+% ==========================================
+% ROOTS OF QUADRATIC EQUATIONS
+% ==========================================
+
+\begin{remark}
+\begin{enumerate}
+\item شرط اینکه معادلهٔ درجهٔ دومی دارای دو ریشهٔ مختلف‌العلامه باشد
+(نمودار سهمی از چهار ناحیه بگذرد)
+این است که:
+\(\dfrac{c}{a}<0\).
+
+% Two possible orientations of the parabola
+\begin{center}
+    \begin{tikzpicture}[
+        x=0.75cm,
+        y=0.75cm,
+        baseline=(current bounding box.center)
+    ]
+        % Coordinate axes
+        \draw[-{Stealth[length=2mm]}, line width=0.6pt]
+            (-1.65,0) -- (1.5,0);
+
+        \draw[-{Stealth[length=2mm]}, line width=0.6pt]
+            (0,-1.15) -- (0,1.15);
+
+        % Upward-opening parabola
+        \draw[
+            line width=0.9pt,
+            smooth,
+            domain=-1.4:1.15,
+            samples=80
+        ]
+            plot (\x,{(\x+1)*(\x-0.65)});
+    \end{tikzpicture}
+    \qquad
+    \begin{tikzpicture}[
+        x=0.75cm,
+        y=0.75cm,
+        baseline=(current bounding box.center)
+    ]
+        % Coordinate axes
+        \draw[-{Stealth[length=2mm]}, line width=0.6pt]
+            (-1.65,0) -- (1.5,0);
+
+        \draw[-{Stealth[length=2mm]}, line width=0.6pt]
+            (0,-1.15) -- (0,1.15);
+
+        % Downward-opening parabola
+        \draw[
+            line width=0.9pt,
+            smooth,
+            domain=-1.4:1.15,
+            samples=80
+        ]
+            plot (\x,{-(\x+1)*(\x-0.65)});
+    \end{tikzpicture}
+\end{center}
+
+\item اگر در معادلهٔ درجهٔ دوم \(c=0\)، آن‌گاه یکی از جواب‌ها
+\(x_1=0\) است و \underline{ریشهٔ دیگر}
+\(x_2=-\dfrac{b}{a}\) می‌باشد.
+
+\item شرط اینکه معادلهٔ درجهٔ دوم دارای دو ریشهٔ قرینه باشند این است که:
+$\frac{c}{a}<0$
+و
+$b=0$.
+
+\item شرط اینکه معادلهٔ درجهٔ دومی دارای دو ریشهٔ حقیقی عکس هم باشند
+این است که:
+$a=c$
+و
+$\Delta\geq 0$.
+
+\item شرط اینکه معادلهٔ درجهٔ دومی دارای دو ریشهٔ حقیقی عکس و قرینهٔ هم باشند
+این است که:
+\hfill
+$a=-c$.
+
+\end{enumerate}
+\end{remark}
+
+
+% ==========================================
+% EXAMPLES
+% ==========================================
+
+\begin{example}
+اگر یکی از جواب‌های معادلهٔ
+$2x^2+(m-1)x+m+2=0$
+برابر صفر باشد، جواب دیگر کدام است؟
+
+\begin{tasks}(2)
+    \task \(\dfrac{1}{2}\)
+    \task \(-\dfrac{3}{2}\)
+    \task \(-\dfrac{1}{2}\)
+    \task \(\dfrac{3}{2}\)
+\end{tasks}
+\end{example}
+
+
+\begin{example}
+به ازای کدام مقادیر \(m\)، نمودار تابع
+$y=-x^2+x+m-2$
+از چهار ناحیۀ محور مختصات می‌گذرد؟
+
+\begin{tasks}(2)
+    \task \(m>2\)
+    \task \(m<1\)
+    \task \(m>1\)
+    \task \(-1<m<2\)
+\end{tasks}
+\end{example}
+
+
+\begin{example}
+به‌ازای چه مقدار \(m\) در معادلهٔ
+$x^2+(m^2-4)x+m-1=0$
+دو ریشهٔ حقیقی قرینه باشند؟
+
+\begin{tasks}(2)
+    \task \(2\)
+    \task \(-2\)
+    \task \(\pm 2\)
+    \task \(1\)
+\end{tasks}
+\end{example}
+
+
+\begin{example}
+به ازای کدام مقدار \(m\)، معادلهٔ درجهٔ دوم
+$mx^2+5x+m^2-6=0$
+دارای دو ریشهٔ حقیقی و معکوس هم است؟
+
+\begin{tasks}(2)
+    \task \(-3\)
+    \task \(-2\)
+    \task \(2\)
+    \task \(3\)
+\end{tasks}
+\end{example}
+
+
+\begin{example}
+به ازای کدام مجموعه مقادیر \(a\)، معادلهٔ
+$(x-1)(x^2+ax-a+1)=0$
+در دو جواب مثبت و یک جواب منفی دارد؟
+
+\begin{tasks}(2)
+    \task \(a>1\)
+    \task \(a>-1\)
+    \task \(0<a<1\)
+    \task \(-1<a<0\)
+\end{tasks}
+\end{example}
